@@ -90,3 +90,7 @@
 	angle(float) : "Rotation angle"  : "0"
 	pitch(float) : "Suns pitch -90 is straight down"  : "-90"
 ]
+
+@PointClass size(-8 -8 -8, 8 8 8) color(0 255 255) = world_environment : "World Environment" [
+	resource(string) : "Resource path to preset"  : "res://environment/presets/default.tres"
+]

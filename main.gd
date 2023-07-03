@@ -1,5 +1,6 @@
 extends Node3D
 
+
 #-----------------SCENE--SCRIPT------------------#
 #    Close your game faster by clicking 'Esc'    #
 #   Change mouse mode by clicking 'Shift + F1'   #
