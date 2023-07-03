@@ -21,6 +21,7 @@ class_property_descriptions = {
 "angle": "Rotation angle"
 }
 meta_properties = {
+"color": Color(0, 1, 0, 1),
 "size": AABB(-16, -16, -24, 16, 16, 24)
 }
 node_options = "----------------------------------------------------------------"
