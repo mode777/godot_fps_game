@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://d2vgv6ie0v40s"]
+[gd_scene load_steps=45 format=3 uid="uid://d2vgv6ie0v40s"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_km1jj"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://player/Player.tscn" id="1_qgept"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b7ccfkajnmn64" path="res://addons/qodot/game_definitions/fgd/point_classes/physics_ball.tscn" id="10_qjp61"]
 [ext_resource type="Script" path="res://addons/qodot/game_definitions/fgd/point_classes/physics_ball.gd" id="11_j7qp4"]
 [ext_resource type="Script" path="res://player/player_entity.gd" id="12_j3kkk"]
-[ext_resource type="Script" path="res://player/MovementController.gd" id="13_4mli8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ggqlx"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -179,7 +178,7 @@ script = ExtResource("1_km1jj")
 environment = SubResource("Environment_7ofk6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.310676, -0.273141, 0.910426, 0, 0.957823, 0.287361, -0.950515, -0.0892761, 0.297573, 0, 5, 0)
+transform = Transform3D(-0.644124, 0.721933, 0.252818, 0, -0.330514, 0.943801, 0.764921, 0.607925, 0.212892, 3.40838, 0, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 250.0
 
@@ -282,12 +281,5 @@ properties = {
 "origin": "-72 -60 88"
 }
 
-[node name="Player" type="CharacterBody3D" parent="QodotMap/entity_2_info_player_start" instance=ExtResource("1_qgept")]
+[node name="Player" parent="QodotMap/entity_2_info_player_start" instance=ExtResource("1_qgept")]
 transform = Transform3D(1.39071e-07, 0, 1, 0, 1, 0, -1, 0, 1.39071e-07, 0, 0, 0)
-collision_layer = 2
-collision_mask = 3
-velocity = Vector3(0, -3226.59, 0)
-floor_block_on_wall = false
-floor_max_angle = 0.802851
-floor_snap_length = 0.5
-script = ExtResource("13_4mli8")

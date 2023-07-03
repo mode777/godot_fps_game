@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=21 format=3 uid="uid://7h57nuq1xmoi"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=22 format=3 uid="uid://7h57nuq1xmoi"]
 
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="1"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/func_group_solid_class.tres" id="2"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://cubvqwi3p77sq" path="res://addons/qodot/game_definitions/fgd/point_classes/physics_ball_point_class.tres" id="18"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/mover_solid_class.tres" id="19"]
 [ext_resource type="Resource" uid="uid://brgx57ts7tgky" path="res://player/info_player_start_point_class.tres" id="19_ibf2l"]
+[ext_resource type="Resource" uid="uid://kagekpmmyn6f" path="res://environment/light_environment_point_class.tres" id="20_bc4rl"]
 
 [resource]
 script = ExtResource("6")
@@ -27,4 +28,4 @@ export_file = false
 target_folder = "res:/"
 fgd_name = "Qodot"
 base_fgd_files = Array[Resource]([])
-entity_definitions = Array[Resource]([ExtResource("9"), ExtResource("1"), ExtResource("4"), ExtResource("12"), ExtResource("3"), ExtResource("13"), ExtResource("7"), ExtResource("18"), ExtResource("2"), ExtResource("10"), ExtResource("11"), ExtResource("8"), ExtResource("17"), ExtResource("5"), ExtResource("14"), ExtResource("19"), ExtResource("16"), ExtResource("15"), ExtResource("19_ibf2l")])
+entity_definitions = Array[Resource]([ExtResource("9"), ExtResource("1"), ExtResource("4"), ExtResource("12"), ExtResource("3"), ExtResource("13"), ExtResource("7"), ExtResource("18"), ExtResource("2"), ExtResource("10"), ExtResource("11"), ExtResource("8"), ExtResource("17"), ExtResource("5"), ExtResource("14"), ExtResource("19"), ExtResource("16"), ExtResource("15"), ExtResource("19_ibf2l"), ExtResource("20_bc4rl")])

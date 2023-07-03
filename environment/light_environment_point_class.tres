@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://kagekpmmyn6f"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_ux7k7"]
+[ext_resource type="Script" path="res://environment/light_environment_entity.gd" id="2_mqpln"]
+
+[resource]
+script = ExtResource("1_ux7k7")
+scene = "----------------------------------------------------------------"
+scripting = "----------------------------------------------------------------"
+script_class = ExtResource("2_mqpln")
+prefix = "@PointClass"
+class_options = "----------------------------------------------------------------"
+classname = "light_environment"
+description = "Sunlight"
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {
+"angle": 0.0,
+"pitch": -90.0
+}
+class_property_descriptions = {
+"angle": "Rotation angle",
+"pitch": "Suns pitch -90 is straight down"
+}
+meta_properties = {
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false
