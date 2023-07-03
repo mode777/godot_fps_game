@@ -23,6 +23,7 @@ class_property_descriptions = {
 "pitch": "Suns pitch -90 is straight down"
 }
 meta_properties = {
+"color": Color(0.960784, 0.960784, 0, 1),
 "size": AABB(-8, -8, -8, 8, 8, 8)
 }
 node_options = "----------------------------------------------------------------"

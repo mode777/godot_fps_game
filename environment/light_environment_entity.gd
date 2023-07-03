@@ -13,6 +13,7 @@ func update_properties():
 		child.queue_free()
 		
 	node = DirectionalLight3D.new()
+	node.shadow_enabled = true
 		
 	if &'pitch' in properties:
 		node.rotate(Vector3.RIGHT, deg_to_rad(properties[&'pitch']))

@@ -213,3 +213,10 @@
 "origin" "-72 -60 88"
 "angle" "270"
 }
+// entity 3
+{
+"classname" "light_environment"
+"origin" "-56 -184 296"
+"pitch" "-70"
+"angle" "-45"
+}
