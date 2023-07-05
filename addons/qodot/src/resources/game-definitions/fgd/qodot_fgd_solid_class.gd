@@ -33,6 +33,4 @@ enum CollisionShapeType {
 @export var script_class: Script
 
 func _init():
-	print("Solid constructor")
 	prefix = "@SolidClass"
-

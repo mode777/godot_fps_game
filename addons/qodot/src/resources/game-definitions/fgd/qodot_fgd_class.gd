@@ -1,8 +1,7 @@
-@tool
 class_name QodotFGDClass
 extends Resource
 
-@export var prefix: String = ""
+var prefix: String = ""
 
 @export var class_options := QodotUtil.CATEGORY_STRING
 

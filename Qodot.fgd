@@ -82,15 +82,15 @@
 	trigger_signal_delay(float) : ""  : "0"
 ]
 
-@PointClass size(-16 -16 -24, 16 16 24) color(0 255 0) = info_player_start : "Player Start" [
+@PointClass color(0 255 0) size(-16 -16 -24, 16 16 24) = info_player_start : "Player Start" [
 	angle(float) : "Rotation angle"  : "0"
 ]
 
-@PointClass size(-8 -8 -8, 8 8 8) = light_environment : "Sunlight" [
+@PointClass color(245 245 0) size(-8 -8 -8, 8 8 8) = light_environment : "Sunlight" [
 	angle(float) : "Rotation angle"  : "0"
 	pitch(float) : "Suns pitch -90 is straight down"  : "-90"
 ]
 
-@PointClass size(-8 -8 -8, 8 8 8) color(0 255 255) = world_environment : "World Environment" [
-	resource(string) : "Resource path to preset"  : "res://environment/presets/default.tres"
+@PointClass color(0 255 255) size(-8 -8 -8, 8 8 8) = world_environment : "World environment" [
+	resource(string) : "Resource name of environment preset"  : "res://environment/presets/default.tres"
 ]

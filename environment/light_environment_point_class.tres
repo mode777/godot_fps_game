@@ -8,7 +8,6 @@ script = ExtResource("1_ux7k7")
 scene = "----------------------------------------------------------------"
 scripting = "----------------------------------------------------------------"
 script_class = ExtResource("2_mqpln")
-prefix = "@PointClass"
 class_options = "----------------------------------------------------------------"
 classname = "light_environment"
 description = "Sunlight"

@@ -7,7 +7,7 @@ extends Resource
 #psuedo-button to export
 @export var export_file: bool:
 	get:
-		return export_file # TODOConverter40 Non existent get function 
+		return export_file # TODO Converter40 Non existent get function
 	set(new_export_file):
 		if new_export_file != export_file:
 			do_export_file()
@@ -26,17 +26,10 @@ func do_export_file():
 				var file_obj := FileAccess.open(fgd_file, FileAccess.WRITE)
 				file_obj.store_string(build_class_text())
 				file_obj.close()
-@export var target_folder : String # (String, DIR, GLOBAL)
+@export_global_dir var target_folder : String # (String, DIR, GLOBAL)
 @export var fgd_name: String = "Qodot"
 @export var base_fgd_files: Array[Resource] = [] # (Array, Resource)
 @export var entity_definitions: Array[Resource] = [ # (Array, Resource)
-	preload("res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres"),
-	preload("res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres"),
-	preload("res://addons/qodot/game_definitions/fgd/solid_classes/detail_solid_class.tres"),
-	preload("res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres"),
-	preload("res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres"),
-	preload("res://addons/qodot/game_definitions/fgd/base_classes/light_base_class.tres"),
-	preload("res://addons/qodot/game_definitions/fgd/point_classes/light_point_class.tres"),
 ]
 
 func build_class_text() -> String:
@@ -49,11 +42,8 @@ func build_class_text() -> String:
 	for ent in entities:
 		if ent.qodot_internal:
 			continue
-		
-		ent._init()	
 		var ent_text = ent.build_def_text()
 		res += ent_text
-		
 		if ent != entities[-1]:
 			res += "\n"
 	return res
@@ -68,7 +58,7 @@ func get_fgd_classes() -> Array:
 		elif not (cur_ent_def is QodotFGDClass):
 			printerr("Bad value in entity definition set at position %s! Not an entity defintion." % cur_ent_def_ind)
 			continue
-		res.append(cur_ent_def as QodotFGDClass)
+		res.append(cur_ent_def)
 	return res
 
 func get_entity_definitions() -> Dictionary:
@@ -114,13 +104,13 @@ func get_entity_definitions() -> Dictionary:
 
 func _generate_base_class_list(entity_def : Resource, visited_base_classes = []) -> Array:
 	var base_classes : Array = []
-	
+
 	visited_base_classes.append(entity_def.classname)
-	
+
 	# End recursive search if no more base_classes
 	if len(entity_def.base_classes) == 0:
 		return base_classes
-	
+
 	# Traverse up to the next level of hierarchy, if not already visited
 	for base_class in entity_def.base_classes:
 		if not base_class.classname in visited_base_classes:
@@ -130,4 +120,3 @@ func _generate_base_class_list(entity_def : Resource, visited_base_classes = [])
 			printerr(str("Entity '", entity_def.classname,"' contains cycle/duplicate to Entity '", base_class.classname, "'"))
 
 	return base_classes
-
