@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://v3fbh0xn5d2h"]
 
-[ext_resource type="Script" path="res://addons/qodot/game_definitions/fgd/solid_classes/physics.gd" id="1"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="2"]
+[ext_resource type="Script" path="res://solids/physics_ex.gd" id="2_ieb6v"]
 
 [resource]
 script = ExtResource("2")
@@ -12,14 +12,17 @@ build_visuals = true
 collision_build = "----------------------------------------------------------------"
 collision_shape_type = 1
 scripting = "----------------------------------------------------------------"
-script_class = ExtResource("1")
+script_class = ExtResource("2_ieb6v")
 class_options = "----------------------------------------------------------------"
 classname = "physics"
 description = "Physics Brush"
 qodot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {
+"avelocity": Vector3(0, 0, 0),
+"freeze": 0,
 "mass": 1.0,
+"sleeping": 0,
 "velocity": Vector3(0, 0, 0)
 }
 class_property_descriptions = {}

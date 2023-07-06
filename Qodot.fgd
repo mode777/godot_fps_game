@@ -70,6 +70,7 @@
 @SolidClass = physics : "Physics Brush" [
 	mass(float) : ""  : "1"
 	velocity(string) : ""  : "0 0 0"
+	avelocity(string) : ""  : "0 0 0"
 ]
 
 @SolidClass = button : "Interactive button brush." [
