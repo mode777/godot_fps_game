@@ -1,14 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdupkh0grwy27"]
+[gd_scene load_steps=7 format=3 uid="uid://bdupkh0grwy27"]
 
 [ext_resource type="PackedScene" uid="uid://lqyku5wn2wo0" path="res://player/MovementController.tscn" id="1_t1jcr"]
 [ext_resource type="PackedScene" uid="uid://b8drbos167vf8" path="res://player/Head.tscn" id="2_41iu1"]
+[ext_resource type="Script" path="res://player/player_col_box.gd" id="3_4q1im"]
 [ext_resource type="Script" path="res://player/Sprint.gd" id="3_bgqcu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdpw0"]
+size = Vector3(0.253191, 0.224883, 2.30326)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6u6hv"]
 
 [node name="Player" instance=ExtResource("1_t1jcr")]
 velocity = Vector3(0, -3226.59, 0)
 
 [node name="Head" parent="." index="1" instance=ExtResource("2_41iu1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.21689, 2.08165e-12)
+
+[node name="Area3D" type="Area3D" parent="Head" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.739734, -2.74621)
+monitorable = false
+script = ExtResource("3_4q1im")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Area3D" index="0"]
+shape = SubResource("BoxShape3D_pdpw0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Area3D" index="1"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 2.303, -2.08165e-12, -0.00943506, -0.0062263)
+mesh = SubResource("BoxMesh_6u6hv")
+skeleton = NodePath("../../..")
 
 [node name="Sprint" type="Node" parent="." index="2"]
 script = ExtResource("3_bgqcu")

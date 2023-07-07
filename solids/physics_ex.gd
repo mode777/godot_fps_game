@@ -5,6 +5,12 @@ class_name PhysicsEntityEx
 var frozen_velocity = Vector3.ZERO
 var frozen_avelocity = Vector3.ZERO
 
+func _ready():
+	connect("body_entered", on_collide)
+	
+func on_collide(node: Node):
+	print(node)
+
 func update_properties():
 	if 'freeze' in properties:
 		freeze = false if properties['freeze'] == 0 else true
