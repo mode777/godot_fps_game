@@ -305,6 +305,7 @@
 {
 "classname" "world_environment"
 "origin" "-56 -216 296"
+"resource" "res://environment/presets/bright.tres"
 }
 // entity 5
 {
