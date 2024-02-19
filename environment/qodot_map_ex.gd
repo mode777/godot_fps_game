@@ -32,3 +32,7 @@ func process_physics(p: PhysicsEntity):
 	var child = p.get_child(0) as MeshInstance3D
 	if child:
 		child.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+
+
+func _on_build_complete():
+	unwrap_uv2()

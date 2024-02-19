@@ -5,11 +5,8 @@
 
 [resource]
 script = ExtResource("2_mneim")
-scene = "----------------------------------------------------------------"
-scripting = "----------------------------------------------------------------"
 script_class = ExtResource("3_541cx")
-prefix = "@PointClass"
-class_options = "----------------------------------------------------------------"
+apply_rotation_on_map_build = true
 classname = "info_player_start"
 description = "Player Start"
 qodot_internal = false
@@ -24,6 +21,5 @@ meta_properties = {
 "color": Color(0, 1, 0, 1),
 "size": AABB(-16, -16, -24, 16, 16, 24)
 }
-node_options = "----------------------------------------------------------------"
 node_class = ""
 transient_node = false
