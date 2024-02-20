@@ -19,7 +19,7 @@ func _process(delta):
 func _physics_process(delta):
 	if pickup:
 		var global_target = to_global(target_position)
-		var diff = (global_target - pickup.global_position - pickup_offset)
+		var diff = (global_target - pickup.global_position)
 		var dist = diff.distance_squared_to(Vector3.ZERO)
 		
 		# object got stuck, count frames before dropping
@@ -42,17 +42,22 @@ func _physics_process(delta):
 			pickup.apply_force(dir * dist * 30)
 			
 			var rotDiff = pickup_rotation - (pickup.rotation.y - %Head.global_rotation.y)
-			print(rotDiff)
-			pickup.apply_torque(Vector3(0,rotDiff*500,0))
-			pickup.angular_velocity *= 0.5
+			#print(rotDiff)
+			pickup.apply_torque(Vector3(0,rotDiff*20,0))
+			pickup.angular_velocity *= 0.9
 	else:
 		var c = get_collider() as RigidBody3D
-		if c and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			
-			pickup_offset = get_collision_point() - c.global_position
-			pickup = c as RigidBody3D
-			pickup_damp = pickup.linear_damp
-			pickup_inertia = pickup.inertia
-			pickup.linear_damp = 10
-			pickup.inertia = Vector3.ONE
-			pickup_rotation = pickup.rotation.y - %Head.global_rotation.y
+		if c:
+			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+				pickup_offset = get_collision_point() - c.global_position
+				pickup = c as RigidBody3D
+				pickup_damp = pickup.linear_damp
+				pickup_inertia = pickup.inertia
+				pickup.linear_damp = 10
+				pickup.inertia = Vector3.ONE
+				pickup_rotation = pickup.rotation.y - %Head.global_rotation.y
+			else:
+				var p2 = get_viewport().get_camera_3d().unproject_position(c.global_position)
+				Events.show_cursor.emit(c.name, p2)
+		else:
+			Events.show_cursor.emit('',Vector2.ZERO)

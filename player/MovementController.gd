@@ -10,10 +10,10 @@ class_name MovementController
 @export var jump_height := 10
 var direction := Vector3()
 var input_axis := Vector2()
+
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 @onready var gravity: float = (ProjectSettings.get_setting("physics/3d/default_gravity") 
 		* gravity_multiplier)
-
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta: float) -> void:
