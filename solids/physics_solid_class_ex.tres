@@ -7,7 +7,7 @@
 script = ExtResource("1_c2k1c")
 spawn_type = 2
 build_visuals = true
-use_in_baked_light = true
+use_in_baked_light = false
 shadow_casting_setting = 1
 build_occlusion = false
 render_layers = 1
