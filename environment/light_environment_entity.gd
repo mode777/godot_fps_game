@@ -19,7 +19,7 @@ func update_properties():
 		node.rotate(Vector3.RIGHT, deg_to_rad(properties[&'pitch']))
 		
 	if &'angle' in properties:
-		node.rotate(Vector3.UP, deg_to_rad(180 + properties[&"angle"]))
+		node.rotate(Vector3.UP, deg_to_rad(properties[&"angle"]))
 		
 	if &'energy' in properties:
 		node.light_energy = properties[&'energy']

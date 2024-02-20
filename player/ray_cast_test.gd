@@ -3,8 +3,9 @@ extends RayCast3D
 var pickup: RigidBody3D = null
 var pickup_damp = 0.0
 var pickup_inertia = Vector3.ZERO
-var pickup_rotation = Vector3.ZERO
+var pickup_rotation = 0.0
 var count_dist = 0
+var pickup_offset = Vector3.ZERO;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +19,7 @@ func _process(delta):
 func _physics_process(delta):
 	if pickup:
 		var global_target = to_global(target_position)
-		var diff = (global_target - pickup.global_position)
+		var diff = (global_target - pickup.global_position - pickup_offset)
 		var dist = diff.distance_squared_to(Vector3.ZERO)
 		
 		# object got stuck, count frames before dropping
@@ -39,17 +40,19 @@ func _physics_process(delta):
 		else:
 			var dir = diff.normalized()
 			pickup.apply_force(dir * dist * 30)
+			
+			var rotDiff = pickup_rotation - (pickup.rotation.y - %Head.global_rotation.y)
+			print(rotDiff)
+			pickup.apply_torque(Vector3(0,rotDiff*500,0))
 			pickup.angular_velocity *= 0.5
-			#var rotDiff = pickup_rotation - pickup.rotation
-			#var rotDist = rotDiff.distance_squared_to(Vector3.ZERO)
-			#print(rotDiff)
-			##pickup.apply_torque(rotDiff * 500 * rotDist)
 	else:
 		var c = get_collider() as RigidBody3D
 		if c and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			pickup = c
+			
+			pickup_offset = get_collision_point() - c.global_position
+			pickup = c as RigidBody3D
 			pickup_damp = pickup.linear_damp
 			pickup_inertia = pickup.inertia
 			pickup.linear_damp = 10
 			pickup.inertia = Vector3.ONE
-			pickup_rotation = pickup.rotation
+			pickup_rotation = pickup.rotation.y - %Head.global_rotation.y

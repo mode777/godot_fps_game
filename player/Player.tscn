@@ -9,6 +9,7 @@
 velocity = Vector3(0, -3226.59, 0)
 
 [node name="Head" parent="." index="1" instance=ExtResource("2_41iu1")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.21689, 2.08165e-12)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" index="1"]
