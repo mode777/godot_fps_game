@@ -4,10 +4,8 @@ signal trigger()
 
 func _ready():
 	connect("body_entered", handle_body_entered)
-	
 
 func handle_body_entered(body: Node):
-	print("Trigger enter")
 	if body is StaticBody3D:
 		return
 

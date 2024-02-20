@@ -5,10 +5,8 @@
 
 [resource]
 script = ExtResource("1_08uoo")
-scene = "----------------------------------------------------------------"
-scripting = "----------------------------------------------------------------"
 script_class = ExtResource("2_484pk")
-class_options = "----------------------------------------------------------------"
+apply_rotation_on_map_build = true
 classname = "world_environment"
 description = "World environment"
 qodot_internal = false
@@ -23,6 +21,5 @@ meta_properties = {
 "color": Color(0, 1, 1, 1),
 "size": AABB(-8, -8, -8, 8, 8, 8)
 }
-node_options = "----------------------------------------------------------------"
 node_class = ""
 transient_node = false

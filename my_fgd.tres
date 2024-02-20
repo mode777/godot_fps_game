@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=7 format=3 uid="uid://deikw5diwjgrc"]
+
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="1_4vls2"]
+[ext_resource type="Resource" uid="uid://d37tylrm0bvop" path="res://environment/environment_point_class.tres" id="2_hj6sl"]
+[ext_resource type="Resource" uid="uid://kagekpmmyn6f" path="res://environment/light_environment_point_class.tres" id="3_wubj3"]
+[ext_resource type="Resource" uid="uid://brgx57ts7tgky" path="res://player/info_player_start_point_class.tres" id="4_srfpf"]
+[ext_resource type="Resource" uid="uid://crjqyqj11etsi" path="res://solids/physics_solid_class_ex.tres" id="5_hsrdj"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="15_onsei"]
+
+[resource]
+script = ExtResource("15_onsei")
+export_file = false
+target_folder = ""
+fgd_name = "MyFgd"
+base_fgd_files = Array[Resource]([ExtResource("1_4vls2")])
+entity_definitions = Array[Resource]([ExtResource("2_hj6sl"), ExtResource("3_wubj3"), ExtResource("4_srfpf"), ExtResource("5_hsrdj")])

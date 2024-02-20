@@ -31,7 +31,7 @@ func update_properties():
 		if freeze:
 			frozen_avelocity = properties['avelocity']
 		else:  
-			angular_velocity = properties['avelocity'] 
+			angular_velocity = properties['avelocity']
 
 func use():
 	angular_velocity = frozen_avelocity

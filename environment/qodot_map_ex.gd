@@ -10,6 +10,7 @@ func _ready():
 	
 func post_process():
 	walk_tree(self)
+	unwrap_uv2()
 	
 func process_node(n: Node):
 	if n is MeshInstance3D:
