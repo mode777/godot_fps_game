@@ -20,6 +20,9 @@ func update_properties():
 		
 	if &'angle' in properties:
 		node.rotate(Vector3.UP, deg_to_rad(180 + properties[&"angle"]))
+		
+	if &'energy' in properties:
+		node.light_energy = properties[&'energy']
 	
 	add_child(node)
 	

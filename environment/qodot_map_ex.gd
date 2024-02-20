@@ -31,4 +31,4 @@ func process_mesh(mesh: MeshInstance3D):
 func process_physics(p: PhysicsEntity):
 	var child = p.get_child(0) as MeshInstance3D
 	if child:
-		child.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
+		child.gi_mode = GeometryInstance3D.GI_MODE_DYNAMIC
