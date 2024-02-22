@@ -4,3 +4,6 @@
 *.png.import
 *.exr.import
 *.exr
+game.console.exe
+game.exe
+game.pck

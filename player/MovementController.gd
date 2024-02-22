@@ -35,8 +35,11 @@ func _physics_process(delta: float) -> void:
 
 func direction_input() -> void:
 	direction = Vector3()
-	var aim: Basis = get_global_transform().basis
+	#var aim: Basis = get_global_transform().basis
+	var aim: Basis =  %Head/Camera.get_global_transform().basis
 	direction = aim.z * -input_axis.x + aim.x * input_axis.y
+	Events.debug.emit("Direction", direction)
+	Events.debug.emit("Input Axis", input_axis)
 
 
 func accelerate(delta: float) -> void:
