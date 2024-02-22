@@ -16,7 +16,6 @@
 [ext_resource type="Script" path="res://environment/environment_entity.gd" id="15_80wx4"]
 [ext_resource type="Script" path="res://addons/qodot/game_definitions/fgd/point_classes/light.gd" id="15_r43vs"]
 [ext_resource type="Script" path="res://solids/physics_ex.gd" id="17_nst6e"]
-[ext_resource type="LightmapGIData" uid="uid://887w4y6bn3pf" path="res://main.lmbake" id="27_27kil"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gsr7"]
 
@@ -795,7 +794,6 @@ visible = false
 quality = 0
 bounces = 1
 bounce_indirect_energy = 2.0
-light_data = ExtResource("27_27kil")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
