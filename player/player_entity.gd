@@ -5,8 +5,8 @@ extends QodotEntity
 var player_node: MovementController = null
 
 func update_properties():
-	if not Engine.is_editor_hint():
-		return
+	#if not Engine.is_editor_hint():
+		#return
 
 	for child in get_children():
 		remove_child(child)

@@ -20,7 +20,18 @@ func _ready() -> void:
 		print("** 'Esc' to close 'Shift + F1' to release mouse **")
 	
 	set_process_input(fast_close)
-
+	var usr_args = OS.get_cmdline_user_args()
+	var args = OS.get_cmdline_args()
+	Events.debug.emit("args", args)
+	Events.debug.emit("usr_args", usr_args)
+	#var path = "res://precompiled.tscn"
+	var path = "res://precompiled.tscn"
+	if(usr_args.size() > 0):
+		path = usr_args[0]
+	elif(args.size() > 0 && args[0].get_extension() != "tscn"):
+		path = args[0]
+	Events.debug.emit("map", path)
+	Level.load(self, path)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel"):

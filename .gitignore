@@ -8,3 +8,8 @@ game.console.exe
 game.exe
 game.pck
 lmbake.exr
+PkgInfo
+Info.plist
+game.app/
+game.command
+export_resets.cfg

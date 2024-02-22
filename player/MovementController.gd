@@ -27,10 +27,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_height
 	else:
 		velocity.y -= gravity * delta
-	
+		
 	accelerate(delta)
 	
-	move_and_slide()
+	var collided = move_and_slide()
+	if collided:
+		Events.debug.emit("collision", get_last_slide_collision().get_collider())
 
 
 func direction_input() -> void:
