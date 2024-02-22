@@ -10,7 +10,7 @@
 [resource]
 script = ExtResource("15_onsei")
 export_file = false
-target_folder = "Data/z002f2au/Documents/repos/godot_fps_game"
+target_folder = "res://"
 fgd_name = "MyFgd"
 base_fgd_files = Array[Resource]([ExtResource("1_4vls2")])
 entity_definitions = Array[Resource]([ExtResource("2_hj6sl"), ExtResource("3_wubj3"), ExtResource("4_srfpf"), ExtResource("5_hsrdj")])

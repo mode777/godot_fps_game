@@ -12,35 +12,12 @@
 	velocity(string) :  : "0 0 0"
 ]
 
-@BaseClass = Targetname : "Subscribes to actions (signal callbacks, reciever methods) performed by other entities with a matching 'target'." [
-	targetname(string) : "Name of target to subscribe to." : ""
-]
-
-@BaseClass = Target : "Performs actions (signal callbacks, methods) on entities with a matching 'targetname'." [
-	target(string) : "Name of entity (targetname) to target." : ""
-]
-
 @PointClass size(-8 -8 -8, 8 8 8) base(Targetname, Target) = signal : "Name of signal to call target." [
 	signal_name(string) : "Name of signal to call on target." : ""
 ]
 
 @PointClass size(-8 -8 -8, 8 8 8) base(Targetname, Target) = receiver : "Calls methods on target." [
 	receiver_name(string) :  : ""
-]
-
-@BaseClass color(255 255 40) = Light[
-	_color(color255) : "Light color" : "255 255 255"
-	delay(choices) : "Attenuation" = [
-		1 : "Inverse distance falloff"
-		2 : "Inverse distance squared"
-		5 : "Inverse distance squared B"
-		0 : "Linear falloff (Default)"
-		4 : "Local minlight"
-		3 : "No falloff"
-	]
-	light(integer) : "Brightness" : 300
-	mangle(string) : "Spotlight angle" : "0.00499999988824 0 0"
-	wait(integer) : "Fade distance multiplier" : 1
 ]
 
 @PointClass size(-8 -8 -8, 8 8 8) base(Light) = light : "Invisible light source" [
@@ -79,25 +56,4 @@
 ]
 
 @SolidClass = wall : "Basic entity brush." [
-]
-@PointClass color(0 255 255) size(-8 -8 -8, 8 8 8) = world_environment : "World environment" [
-	resource(string) : "Resource name of environment preset" : "res://environment/presets/default.tres"
-]
-
-@PointClass color(245 245 0) size(-8 -8 -8, 8 8 8) = light_environment : "Sunlight" [
-	angle(float) : "Rotation angle" : "0"
-	energy(float) :  : "1"
-	pitch(float) : "Suns pitch -90 is straight down" : "-90"
-]
-
-@PointClass color(0 255 0) size(-16 -16 -24, 16 16 24) = info_player_start : "Player Start" [
-	angle(float) : "Rotation angle" : "0"
-]
-
-@SolidClass = physics : "Physics Brush" [
-	avelocity(string) :  : "0 0 0"
-	freeze(integer) :  : 0
-	mass(float) :  : "1"
-	sleeping(integer) :  : 0
-	velocity(string) :  : "0 0 0"
 ]

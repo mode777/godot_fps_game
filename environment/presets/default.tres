@@ -9,8 +9,10 @@ sky_material = SubResource("ProceduralSkyMaterial_ggqlx")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_t5ash")
-ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.9
+ambient_light_energy = 0.61
+reflected_light_source = 2
 tonemap_mode = 2
+ssao_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
