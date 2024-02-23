@@ -7,6 +7,7 @@ extends Node3D
 #------------------------------------------------#
 
 @export var fast_close := true
+@export var default_map: String = "res://precompiled.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +26,7 @@ func _ready() -> void:
 	Events.debug.emit("args", args)
 	Events.debug.emit("usr_args", usr_args)
 	#var path = "res://precompiled.tscn"
-	var path = "res://precompiled.tscn"
+	var path = default_map
 	if(usr_args.size() > 0):
 		path = usr_args[0]
 	elif(args.size() > 0 && args[0].get_extension() != "tscn"):

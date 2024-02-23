@@ -1,9 +1,12 @@
 extends Node
 
+var is_precompiled = false
+
 func load(parent: Node3D, file: String) -> Node3D:
 	Events.start_loading.emit()
 	var myNode = null
 	if(file.get_extension() == "map"):
+		is_precompiled = false
 		var map = QodotMapEx.new()
 		map.map_file = file
 		map.entity_fgd = preload("res://my_fgd.tres")
@@ -17,6 +20,7 @@ func load(parent: Node3D, file: String) -> Node3D:
 		print("COMPLETE")
 		myNode = map
 	else:
+		is_precompiled = true
 		var scene = load(file).instantiate()
 		parent.add_child(scene)
 		myNode = scene

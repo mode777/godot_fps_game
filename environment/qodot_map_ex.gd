@@ -1,6 +1,8 @@
 @tool
 class_name QodotMapEx
 extends QodotMap
+
+@export var is_precompiled: bool = false
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
