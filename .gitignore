@@ -13,3 +13,5 @@ game.app/
 game.command
 export_resets.cfg
 .vscode/settings.json
+build/
+maps/

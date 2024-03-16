@@ -60,6 +60,7 @@ func _process(delta):
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_km1jj")
+default_map = "tester"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

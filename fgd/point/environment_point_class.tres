@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://d37tylrm0bvop"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_08uoo"]
+[ext_resource type="Script" path="res://fgd/point/environment_entity.gd" id="2_484pk"]
+
+[resource]
+script = ExtResource("1_08uoo")
+script_class = ExtResource("2_484pk")
+apply_rotation_on_map_build = true
+classname = "world_environment"
+description = "World environment"
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {
+"resource": "res://environment/presets/default.tres"
+}
+class_property_descriptions = {
+"resource": "Resource name of environment preset"
+}
+meta_properties = {
+"color": Color(0, 1, 1, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_class = ""
+transient_node = true

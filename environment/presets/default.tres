@@ -1,18 +1,30 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://bas1ludd2t7qo"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bas1ludd2t7qo"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ggqlx"]
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[ext_resource type="Texture2D" uid="uid://c0fg41h6dtipn" path="res://Epic_GloriousPink_EquiRect.png" id="1_f50ei"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b8n0i"]
+panorama = ExtResource("1_f50ei")
+filter = false
 
 [sub_resource type="Sky" id="Sky_t5ash"]
-sky_material = SubResource("ProceduralSkyMaterial_ggqlx")
+sky_material = SubResource("PanoramaSkyMaterial_b8n0i")
 
 [resource]
 background_mode = 2
 sky = SubResource("Sky_t5ash")
-ambient_light_sky_contribution = 0.9
-ambient_light_energy = 0.61
+ambient_light_source = 3
+ambient_light_color = Color(0.898039, 0.898039, 0.898039, 1)
+ambient_light_sky_contribution = 0.64
+ambient_light_energy = 0.0
 reflected_light_source = 2
 tonemap_mode = 2
 ssao_enabled = true
+ssao_radius = 7.35
+ssao_intensity = 2.82
 sdfgi_use_occlusion = true
+sdfgi_min_cell_size = 2.00752
+sdfgi_cascade0_distance = 128.481
+sdfgi_max_distance = 2055.7
+sdfgi_y_scale = 0
+sdfgi_energy = 2.0
 glow_enabled = true

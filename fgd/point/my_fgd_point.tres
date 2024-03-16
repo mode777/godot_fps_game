@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=8 format=3 uid="uid://cqpkv5pjmqsyp"]
+
+[ext_resource type="Resource" uid="uid://brgx57ts7tgky" path="res://fgd/point/info_player_start_point_class.tres" id="4_k84y0"]
+[ext_resource type="Resource" uid="uid://d37tylrm0bvop" path="res://fgd/point/environment_point_class.tres" id="5_55x7p"]
+[ext_resource type="Resource" uid="uid://kagekpmmyn6f" path="res://fgd/point/light_environment_point_class.tres" id="6_fvv43"]
+[ext_resource type="Resource" uid="uid://bu3h1cvdigp1i" path="res://addons/qodot/game_definitions/fgd/point_classes/signal_point_class.tres" id="6_pnpdl"]
+[ext_resource type="Resource" uid="uid://dbh35xj5q8gvc" path="res://addons/qodot/game_definitions/fgd/point_classes/receiver_point_class.tres" id="7_7ow6n"]
+[ext_resource type="Resource" uid="uid://ccwosedfa8v8d" path="res://addons/qodot/game_definitions/fgd/point_classes/light_point_class.tres" id="8_c6mlx"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="15_fk7uj"]
+
+[resource]
+script = ExtResource("15_fk7uj")
+export_file = false
+target_folder = "res://trenchbroom/export"
+fgd_name = "MyFgd"
+base_fgd_files = Array[Resource]([])
+entity_definitions = Array[Resource]([ExtResource("6_pnpdl"), ExtResource("7_7ow6n"), ExtResource("8_c6mlx"), ExtResource("4_k84y0"), ExtResource("5_55x7p"), ExtResource("6_fvv43")])

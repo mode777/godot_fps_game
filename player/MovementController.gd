@@ -33,6 +33,8 @@ func _physics_process(delta: float) -> void:
 	var collided = move_and_slide()
 	if collided:
 		Events.debug.emit("collision", get_last_slide_collision().get_collider())
+	else:
+		Events.debug.emit("collision", "NULL")
 
 
 func direction_input() -> void:
