@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://nnspjm5u6qcc"]
 
-[ext_resource type="Script" path="res://environment/qodot_map_ex.gd" id="1_sl4wk"]
+[ext_resource type="Script" path="res://qodot/qodot_map_ex.gd" id="1_sl4wk"]
 [ext_resource type="Resource" uid="uid://bcf88fqa6vuue" path="res://fgd/my_fgd.tres" id="2_w38og"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n15hf"]

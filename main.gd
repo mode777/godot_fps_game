@@ -1,6 +1,4 @@
 extends Node3D
-
-
 #-----------------SCENE--SCRIPT------------------#
 #    Close your game faster by clicking 'Esc'    #
 #   Change mouse mode by clicking 'Shift + F1'   #
@@ -9,6 +7,7 @@ extends Node3D
 @export var fast_close := true
 @export var default_map: String = "maya"
 @export var editor_game_dir: String = "./build"
+var game_dir
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +25,9 @@ func _ready() -> void:
 	Events.debug.emit("usr_args", usr_args)
 		
 	var map = default_map
-	var game_dir = editor_game_dir if OS.has_feature('editor') else "."
+	game_dir = editor_game_dir if OS.has_feature('editor') else "."
+	
+	var config = get_or_create_config()
 	
 	if(usr_args.size() > 0):
 		map = usr_args[0]
@@ -36,10 +37,10 @@ func _ready() -> void:
 		var res_path = "res://maps/%s.%s" % [ map, ext ]
 		print("Testing %s.%s" % [map,ext])
 		if (ext == "scn" or ext == "tscn") and ResourceLoader.exists(res_path):
-			Level.load_scn(self, res_path)
+			Level.load_scn(self, res_path, config)
 			return
 		elif FileAccess.file_exists(map_path):
-			Level.load_map(self, map_path, "%s/textures" % game_dir)
+			Level.load_map(self, map_path, game_dir, config)
 			return
 
 func _input(event: InputEvent) -> void:
@@ -63,3 +64,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func get_or_create_config():
+	var config_path = "%s/settings.cfg"%game_dir
+	var config = ConfigFile.new()
+	
+	if FileAccess.file_exists(config_path):
+		print("Loading settings from %s"%config_path)		
+		config.load(config_path)
+	else:
+		print("Writing settings to %s"%config_path)
+		config.set_value("Textures", "enable_compression", true)
+		config.set_value("Textures", "filter", BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC)
+		config.save(config_path)
+	return config

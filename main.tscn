@@ -61,6 +61,7 @@ func _process(delta):
 [node name="main" type="Node3D"]
 script = ExtResource("1_km1jj")
 default_map = "tester"
+editor_game_dir = "../my_game"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

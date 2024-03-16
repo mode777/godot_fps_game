@@ -19,13 +19,7 @@ classname = "worldspawn"
 description = "World Entity"
 qodot_internal = false
 base_classes = Array[Resource]([])
-class_properties = {
-"enable_compression": 1,
-"texture_filter": {
-"linear (Default)": 0,
-"pixelated": 1
-}
-}
+class_properties = {}
 class_property_descriptions = {}
 meta_properties = {}
 node_class = "StaticBody3D"

@@ -12,10 +12,15 @@ description = "World environment"
 qodot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {
-"resource": "res://environment/presets/default.tres"
+"ambient_light": 0.5,
+"enable_ao": 0,
+"sky": "default",
+"sky_filter": 1
 }
 class_property_descriptions = {
-"resource": "Resource name of environment preset"
+"ambient_light": "Amount of ambient light between 0-1",
+"sky": "Skybox to load",
+"sky_filter": "Should the skybox be filtered"
 }
 meta_properties = {
 "color": Color(0, 1, 1, 1),
