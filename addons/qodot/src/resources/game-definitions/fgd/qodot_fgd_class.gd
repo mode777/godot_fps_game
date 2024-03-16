@@ -85,6 +85,7 @@ func build_def_text() -> String:
 	# Class properties
 	for prop in class_properties:
 		var value = class_properties[prop]
+		print("Property: %s"%prop)
 
 		var prop_val = null
 		var prop_type := ""
@@ -162,6 +163,7 @@ func build_def_text() -> String:
 			res += QodotUtil.newline()
 
 	res += "]" + QodotUtil.newline()
+	print(res)
 
 	return res
 

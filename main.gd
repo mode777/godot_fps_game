@@ -7,7 +7,8 @@ extends Node3D
 #------------------------------------------------#
 
 @export var fast_close := true
-@export var default_map: String = "res://precompiled.tscn"
+@export var default_map: String = "maya"
+@export var editor_game_dir: String = "./build"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,21 +23,31 @@ func _ready() -> void:
 	
 	set_process_input(fast_close)
 	var usr_args = OS.get_cmdline_user_args()
-	var args = OS.get_cmdline_args()
-	Events.debug.emit("args", args)
 	Events.debug.emit("usr_args", usr_args)
-	#var path = "res://precompiled.tscn"
-	var path = default_map
+		
+	var map = default_map
+	var game_dir = editor_game_dir if OS.has_feature('editor') else "."
+	
 	if(usr_args.size() > 0):
-		path = usr_args[0]
-	elif(args.size() > 0 && args[0].get_extension() != "tscn"):
-		path = args[0]
-	Events.debug.emit("map", path)
-	Level.load(self, path)
+		map = usr_args[0]
+	Events.debug.emit("map", map)
+	for ext in ["scn", "tscn", "map"]:
+		var map_path = "%s/maps/%s.%s" % [ game_dir, map, ext ]
+		var res_path = "res://maps/%s.%s" % [ map, ext ]
+		print("Testing %s.%s" % [map,ext])
+		if (ext == "scn" or ext == "tscn") and ResourceLoader.exists(res_path):
+			Level.load_scn(self, res_path)
+			return
+		elif FileAccess.file_exists(map_path):
+			Level.load_map(self, map_path, "%s/textures" % game_dir)
+			return
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel"):
 		get_tree().quit() # Quits the game
+		
+	if event.is_action_pressed(&"maximize"):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	
 	if event.is_action_pressed(&"change_mouse_input"):
 		match Input.get_mouse_mode():

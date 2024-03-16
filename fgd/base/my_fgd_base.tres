@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=5 format=3 uid="uid://d11ugsahjf1o1"]
+
+[ext_resource type="Resource" uid="uid://c5o31v30rw7v5" path="res://addons/qodot/game_definitions/fgd/base_classes/light_base_class.tres" id="1_ihu1j"]
+[ext_resource type="Resource" uid="uid://ccdjpf5j25aua" path="res://addons/qodot/game_definitions/fgd/base_classes/targetname_base_class.tres" id="2_cai02"]
+[ext_resource type="Resource" uid="uid://dgm276g7bw8q5" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="3_5fs7y"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="15_swbp0"]
+
+[resource]
+script = ExtResource("15_swbp0")
+export_file = false
+target_folder = "res://trenchbroom/export"
+fgd_name = "MyFgd"
+base_fgd_files = Array[Resource]([])
+entity_definitions = Array[Resource]([ExtResource("1_ihu1j"), ExtResource("2_cai02"), ExtResource("3_5fs7y")])

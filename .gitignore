@@ -12,3 +12,5 @@ Info.plist
 game.app/
 game.command
 export_resets.cfg
+build/
+maps/
