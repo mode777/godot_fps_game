@@ -3,12 +3,12 @@
 [ext_resource type="Resource" uid="uid://cw4s1hnxqetee" path="res://addons/qodot/game_definitions/fgd/solid_classes/func_group_solid_class.tres" id="2_0iegx"]
 [ext_resource type="Resource" uid="uid://bnbdy0cky2bo" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="3_jahk1"]
 [ext_resource type="Resource" uid="uid://dy7undvxjvodx" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_x4v4l"]
-[ext_resource type="Resource" uid="uid://v3fbh0xn5d2h" path="res://addons/qodot/game_definitions/fgd/solid_classes/physics_solid_class.tres" id="5_l68b2"]
-[ext_resource type="Resource" uid="uid://ckg61cpr5p63l" path="res://addons/qodot/game_definitions/fgd/solid_classes/button_solid_class.tres" id="9_05733"]
+[ext_resource type="Resource" uid="uid://bpq348460sqer" path="res://fgd/solid/trigger_solid_class.tres" id="10_1bc55"]
+[ext_resource type="Resource" uid="uid://3mcl25e4bgmt" path="res://fgd/solid/physics_solid_class.tres" id="10_b5lw6"]
 [ext_resource type="Resource" uid="uid://b8aisardk4k4u" path="res://addons/qodot/game_definitions/fgd/solid_classes/detail_solid_class.tres" id="10_bvxsp"]
-[ext_resource type="Resource" uid="uid://dboln6h3hnbiy" path="res://fgd/solid/mover_solid_class.tres" id="10_p8a0a"]
+[ext_resource type="Resource" uid="uid://2bsjy415e2m7" path="res://fgd/solid/button_solid_class.tres" id="10_haytk"]
+[ext_resource type="Resource" path="res://fgd/solid/mover_solid_class.tres" id="10_p8a0a"]
 [ext_resource type="Resource" uid="uid://de6w02sa4ckl5" path="res://addons/qodot/game_definitions/fgd/solid_classes/rotate_solid_class.tres" id="12_psn5f"]
-[ext_resource type="Resource" uid="uid://b70dbh5v15xno" path="res://addons/qodot/game_definitions/fgd/solid_classes/trigger_solid_class.tres" id="13_xkvoa"]
 [ext_resource type="Resource" uid="uid://bu2f3lupsjhfp" path="res://addons/qodot/game_definitions/fgd/solid_classes/wall_solid_class.tres" id="14_myxxq"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="15_uvuiw"]
 
@@ -18,4 +18,4 @@ export_file = false
 target_folder = "res://trenchbroom/export"
 fgd_name = "MyFgd"
 base_fgd_files = Array[Resource]([])
-entity_definitions = Array[Resource]([ExtResource("2_0iegx"), ExtResource("3_jahk1"), ExtResource("4_x4v4l"), ExtResource("5_l68b2"), ExtResource("9_05733"), ExtResource("10_bvxsp"), ExtResource("12_psn5f"), ExtResource("13_xkvoa"), ExtResource("14_myxxq"), ExtResource("10_p8a0a")])
+entity_definitions = Array[Resource]([ExtResource("2_0iegx"), ExtResource("3_jahk1"), ExtResource("4_x4v4l"), ExtResource("10_bvxsp"), ExtResource("12_psn5f"), ExtResource("14_myxxq"), ExtResource("10_p8a0a"), ExtResource("10_1bc55"), ExtResource("10_haytk"), ExtResource("10_b5lw6")])

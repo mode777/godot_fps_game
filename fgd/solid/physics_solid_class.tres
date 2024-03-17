@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://crjqyqj11etsi"]
+[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://3mcl25e4bgmt"]
 
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_c2k1c"]
-[ext_resource type="Script" path="res://solids/physics_ex.gd" id="2_b27jn"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_jtjpq"]
+[ext_resource type="Script" path="res://fgd/solid/physics_ex.gd" id="2_ojcx8"]
 
 [resource]
-script = ExtResource("1_c2k1c")
+script = ExtResource("1_jtjpq")
 spawn_type = 2
 build_visuals = true
-use_in_baked_light = false
+use_in_baked_light = true
 shadow_casting_setting = 1
 build_occlusion = false
 render_layers = 1
@@ -16,16 +16,15 @@ collision_layer = 1
 collision_mask = 1
 collision_priority = 1.0
 collision_shape_margin = 0.04
-script_class = ExtResource("2_b27jn")
+script_class = ExtResource("2_ojcx8")
 classname = "physics"
 description = "Physics Brush"
 qodot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {
 "avelocity": Vector3(0, 0, 0),
-"freeze": 0,
 "mass": 1.0,
-"sleeping": 0,
+"options": [["Freeze", 1, 0]],
 "velocity": Vector3(0, 0, 0)
 }
 class_property_descriptions = {}

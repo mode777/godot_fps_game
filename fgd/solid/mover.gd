@@ -1,12 +1,11 @@
 extends CharacterBody3D
 
 @export var properties: Dictionary :
-	get:
-		return properties # TODOConverter40 Non existent get function 
-	set(new_properties):
-		if(properties != new_properties):
-			properties = new_properties
-			update_properties()
+	set(p):
+		properties = p if properties.is_empty() else properties
+		update_properties()
+		
+enum { OPTION_START_ON = 1 }
 
 var base_transform: Transform3D
 var offset_transform: Transform3D
@@ -31,6 +30,12 @@ func update_properties() -> void:
 
 	if 'speed' in properties:
 		speed = properties.speed
+		
+	if &'options' in properties:
+		if properties.options & OPTION_START_ON > 0:
+			is_reverse = true
+			transform = base_transform * offset_transform
+			target_transform = transform
 
 func _process(delta: float) -> void:
 	transform = transform.interpolate_with(target_transform, speed * delta)
@@ -39,15 +44,17 @@ func _ready() -> void:
 	base_transform = transform
 	target_transform = base_transform
 
-func use() -> void:
-	if not is_reverse:
-		play_motion()
+func use(props: Dictionary) -> void:
+	if not is_reverse and props.trigger_state != Trigger.TRIGGER_STATE_OFF:
+		on(props)
+	elif is_reverse and props.trigger_state != Trigger.TRIGGER_STATE_ON:
+		off(props)
 	else:
-		reverse_motion()
+		return
 	is_reverse = not is_reverse
 
-func play_motion() -> void:
+func on(props: Dictionary) -> void:
 	target_transform = base_transform * offset_transform
 
-func reverse_motion() -> void:
+func off(props: Dictionary) -> void:
 	target_transform = base_transform

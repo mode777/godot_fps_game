@@ -16,7 +16,7 @@ func update_properties():
 
 	if 'mass' in properties:
 		mass = properties.mass
-		
+
 
 func use():
 	bounce()

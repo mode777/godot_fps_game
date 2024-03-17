@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://dboln6h3hnbiy"]
+[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://dc7g7o1p234ec"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_0nvgy"]
 [ext_resource type="Script" path="res://fgd/solid/mover.gd" id="2_v0hpe"]
@@ -22,6 +22,7 @@ description = "Moving brush."
 qodot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {
+"options": [["Start On", 1, 0]],
 "rotation": Vector3(0, 0, 0),
 "scale": Vector3(1, 1, 1),
 "speed": 1.0,
