@@ -3,7 +3,7 @@ class_name EnvironmentEntity
 extends QodotEntity
 
 func update_properties():
-	var map = get_map_root()
+	var map = QodotHelpersEx.get_map(self)
 	print("Game dir %s"%map.game_dir)
 		
 	var node = WorldEnvironment.new()
@@ -33,9 +33,3 @@ func update_properties():
 			var edited_scene_root = tree.get_edited_scene_root()
 			if edited_scene_root:
 				node.set_owner(edited_scene_root)
-
-func get_map_root(node: Node = self) -> QodotMapEx:
-	if node is QodotMapEx:
-		return node as QodotMapEx
-	else:
-		return get_map_root(node.get_parent())

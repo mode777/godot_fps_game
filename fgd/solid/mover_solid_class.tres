@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://b3yn012fy6782"]
+[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://dboln6h3hnbiy"]
 
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1"]
-[ext_resource type="Script" path="res://addons/qodot/game_definitions/fgd/solid_classes/mover.gd" id="2"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_0nvgy"]
+[ext_resource type="Script" path="res://fgd/solid/mover.gd" id="2_v0hpe"]
 
 [resource]
-script = ExtResource("1")
+script = ExtResource("1_0nvgy")
 spawn_type = 2
 build_visuals = true
 use_in_baked_light = true
@@ -16,7 +16,7 @@ collision_layer = 1
 collision_mask = 1
 collision_priority = 1.0
 collision_shape_margin = 0.04
-script_class = ExtResource("2")
+script_class = ExtResource("2_v0hpe")
 classname = "mover"
 description = "Moving brush."
 qodot_internal = false

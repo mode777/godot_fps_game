@@ -23,6 +23,9 @@ func update_properties():
 	if &'energy' in properties:
 		node.light_energy = properties[&'energy']
 	
+	if &'color' in properties:
+		node.light_color = properties[&'color']
+	
 	get_parent().add_child(node)
 	
 	if is_inside_tree():

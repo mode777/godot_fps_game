@@ -13,6 +13,7 @@ qodot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {
 "angle": 0.0,
+"color": Color(1, 1, 1, 1),
 "energy": 1.0,
 "pitch": -90.0
 }
