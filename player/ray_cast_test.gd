@@ -46,7 +46,16 @@ func _physics_process(delta):
 			pickup.apply_torque(Vector3(0,rotDiff*20,0))
 			pickup.angular_velocity *= 0.9
 	else:
-		var c = get_collider() as RigidBody3D
+		var collider = get_collider()
+		Events.debug.emit("Raycast", collider)
+		if collider != null:
+			var p2 = get_viewport().get_camera_3d().unproject_position(collider.global_position)
+			Events.show_cursor.emit(collider.name, p2)
+		else:
+			Events.show_cursor.emit('',Vector2.ZERO)			
+		
+		
+		var c = collider as RigidBody3D
 		if c:
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 				pickup_offset = get_collision_point() - c.global_position
@@ -56,8 +65,3 @@ func _physics_process(delta):
 				pickup.linear_damp = 10
 				pickup.inertia = Vector3.ONE
 				pickup_rotation = pickup.rotation.y - %Head.global_rotation.y
-			else:
-				var p2 = get_viewport().get_camera_3d().unproject_position(c.global_position)
-				Events.show_cursor.emit(c.name, p2)
-		else:
-			Events.show_cursor.emit('',Vector2.ZERO)

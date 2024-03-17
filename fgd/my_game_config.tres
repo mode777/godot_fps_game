@@ -11,7 +11,7 @@
 [resource]
 script = ExtResource("6_y6h36")
 export_file = false
-trenchbroom_games_folder = "C:\\Users\\z002f2au\\AppData\\Roaming/TrenchBroom/games"
+trenchbroom_games_folder = "/Users/alexk/Library/Application Support/TrenchBroom/games"
 game_name = "my_game"
 icon = ExtResource("6_eify5")
 map_formats = Array[Dictionary]([{
