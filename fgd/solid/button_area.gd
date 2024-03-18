@@ -4,6 +4,8 @@ signal trigger()
 signal pressed()
 signal released()
 
+enum { OPTION_OFF_ON_EXIT = 1, OPTION_ONCE = 2 }
+
 @export var properties: Dictionary :
 	get:
 		return properties # TODOConverter40 Non existent get function 
@@ -22,6 +24,8 @@ var trigger_signal_delay :=  0.0
 var press_signal_delay :=  0.0
 var release_signal_delay :=  0.0
 var trigger_state = Trigger.TRIGGER_STATE_TOGGLE
+var once = false
+var trigger_on_exit = false
 
 var overlaps := 0
 
@@ -33,7 +37,8 @@ func update_properties() -> void:
 		speed = properties.speed
 
 	if 'depth' in properties:
-		depth = float(properties.depth)
+		var map = QodotHelpersEx.get_map(self)
+		depth = float(properties.depth) / map.inverse_scale_factor
 
 	if 'release_delay' in properties:
 		release_delay = properties.release_delay
@@ -49,8 +54,13 @@ func update_properties() -> void:
 
 	if &'triggerstate' in properties:
 		trigger_state = properties.triggerstate
+		
+	if &'options' in properties:
+		once = properties.options & OPTION_ONCE > 0
+		trigger_on_exit = properties.options & OPTION_OFF_ON_EXIT > 0
 
 func _init() -> void:
+	monitorable = true
 	connect("body_shape_entered", body_shape_entered)
 	connect("body_shape_exited", body_shape_exited)
 
@@ -106,4 +116,6 @@ func release() -> void:
 	is_pressed = false
 
 	await get_tree().create_timer(release_delay).timeout
+	if trigger_on_exit:
+		trigger.emit({ "sender": self, "trigger_state": Trigger.TRIGGER_STATE_OFF })
 	released.emit({ "sender": self, "trigger_state": trigger_state })

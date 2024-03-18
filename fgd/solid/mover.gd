@@ -37,7 +37,7 @@ func update_properties() -> void:
 			transform = base_transform * offset_transform
 			target_transform = transform
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	transform = transform.interpolate_with(target_transform, speed * delta)
 
 func _ready() -> void:

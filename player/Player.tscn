@@ -15,6 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.21689, 2.08165
 [node name="RayCast3D" type="RayCast3D" parent="Head" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08165e-12, 0.0385122, -2.08165e-12)
 target_position = Vector3(2.08165e-12, 2.08165e-12, -6)
+collision_mask = 2
 script = ExtResource("3_2xwcu")
 
 [node name="Sprint" type="Node" parent="." index="2"]

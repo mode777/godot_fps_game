@@ -9,6 +9,7 @@ var pickup_offset = Vector3.ZERO;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	collide_with_areas = true
 	pass # Replace with function body.
 
 
